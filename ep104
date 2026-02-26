@@ -1,0 +1,17 @@
+import time
+begin = time.time()
+
+def fibonacci_pair(n):
+    if n == 0:
+        return (0,1)
+    else:
+        a, b = fibonacci_pair(n // 2)
+        c = a * (2 * b - a)
+        d = a * a + b * b
+        if n % 2 == 0:
+            return (c, d)
+        else:
+            return (d, c + d)
+        
+end = time.time()
+print(f"Finished in {end - begin} seconds.")
